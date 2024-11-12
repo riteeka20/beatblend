@@ -4,7 +4,6 @@ import { useGetSongsByGenreQuery } from "../redux/services/songFetch";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectGenreListId } from "../redux/features/playerSlice";
-const API_URL = import.meta.env.VITE_API_URL;
 
 const Discover = () => {
   const dispatch = useDispatch();

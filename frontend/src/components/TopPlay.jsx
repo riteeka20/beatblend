@@ -1,5 +1,4 @@
-import { useEffect, useRef, useLocation } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
@@ -62,11 +61,11 @@ const TopPlay = () => {
 
   // Hide the component for a specific route (e.g., '/specific-route')
   if (location.pathname.startsWith("/search/")) {
-    return null; 
+    return null;
   }
   const dispatch = useDispatch();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-  
+
   const { data, isFetching, error } = useGetTopChartQuery();
 
   const {
@@ -95,7 +94,6 @@ const TopPlay = () => {
 
   return (
     <div
-     
       className="xl:ml-6 ml-0 xl:mb-6 mb-0 flex-1
       xl:max-w-[500px] max-w-full flex flex-col"
     >
